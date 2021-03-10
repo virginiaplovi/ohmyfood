@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Mobile-friendly site that lists the menus of gourmet restaurants.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virginiaplovi/ohmyfood.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/virginiaplovi/ohmyfood/issues"
+  },
+  "homepage": "https://github.com/virginiaplovi/ohmyfood#readme"
+}
