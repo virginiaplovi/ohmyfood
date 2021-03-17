@@ -68,6 +68,7 @@ $color-background: #F4F4F4;
         background: linear-gradient(175deg, $color-secondary 0%, $color-primary 98%);
         padding: 10px;
         cursor: pointer;
+        user-select: none;
         width: 50%;
         margin: 0 auto;
         box-shadow: 3px 3px 14px 0px #a7a7a7;
