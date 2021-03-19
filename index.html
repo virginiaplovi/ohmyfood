@@ -1,51 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
 
-        <title>ohmyfood</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Compose your own menu and reduce waiting time in restaurants,you can make your choice in advance. No more wasting time consulting the menu!">
-        <meta name="keywords" content="Restaurants, meals, menù, reservations">
-        <meta name="author" content="Virginia Plovino">
-        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
-    
-        <link href="public/style.css" type="text/css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet"> 
-        <script src="https://kit.fontawesome.com/6d0a3be7f8.js" crossorigin="anonymous"></script>
-        <link id="shortcut-icon" href="images/logo/utensils-solid.svg" type="image/x-icon" rel="shortcut icon">
-    </head>
-    <body>
-        <!-- LOGO -->
-        <header>
-            <div class="logo"><a href="#"><img src="images/logo/ohmyfood@2x.svg" alt="ohmyfood Logo"
-                        title="ohmyfood - Home"></a></div>
-        </header>
-        <!-- INTRO -->
-        <section>
-            <div class="location">
-                <i class="fas fa-map-marker-alt location__icon"></i>
-                <div class="location__text">Paris, Belleville</div>
+<head>
+
+    <title>ohmyfood</title>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Compose your own menu and reduce waiting time in restaurants,you can make your choice in advance. No more wasting time consulting the menu!">
+    <meta name="keywords" content="Restaurants, meals, menù, reservations">
+    <meta name="author" content="Virginia Plovino">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+
+    <link href="public/style.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6d0a3be7f8.js" crossorigin="anonymous"></script>
+    <link id="shortcut-icon" href="images/logo/utensils-solid.svg" type="image/x-icon" rel="shortcut icon">
+</head>
+
+<body>
+    <!-- LOGO -->
+    <header>
+        <div class="logo"><a href="#"><img src="images/logo/ohmyfood@2x.svg" alt="ohmyfood Logo"
+                    title="ohmyfood - Home"></a></div>
+    </header>
+    <!-- INTRO -->
+    <section>
+        <div class="location">
+            <i class="fas fa-map-marker-alt location__icon"></i>
+            <div class="location__text">Paris, Belleville</div>
+        </div>
+
+        <div class="explore">
+            <div class="explore__title">Book the menu you like</div>
+            <div class="explore__txt">Discover top-of-the-art restaurants we picked for you</div>
+            <div class="explore__btn">Explore our restaurants</div>
+        </div>
+    </section>
+    <!-- INSTRUCTION -->
+    <section>
+        <ol class="instruction-list" data-header="How it works">
+            <li><i class="fas fa-mobile-alt instruction-list__icon"></i>Chose a restaurant</li>
+            <li><i class="fas fa-list-ul instruction-list__icon"></i>Create your menu</li>
+            <li><i class="fas fa-store instruction-list__icon"></i>Go enjoy it at the restaurant</li>
+
+        </ol>
+    </section>
+
+    <section>
+        <div class="restaurants">
+            <div class="restaurants__header">Restaurants</div>
+            <div class="restaurants__btn">
+                <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
+                <div class="caption">
+                    <div class="caption__text">
+                        <p>Full Palette</p>
+                        <p>New York</p>
+                    </div>
+                    <i class="far fa-heart caption__icon"></i>
+                </div>
             </div>
-            
-            <div class="explore">
-                <div class="explore__title">Book the menu you like</div>
-                <div class="explore__txt">Discover top-of-the-art restaurants we picked for you</div>
-                <div class="explore__btn">Explore our restaurants</div>
+
+            <div class="restaurants__btn">
+                <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg">
+                <div class="caption">
+                    <div class="caption__text">
+                        <p>Enchanted Plate</p>
+                        <p>New York</p>
+                    </div>
+                    <i class="far fa-heart caption__icon"></i>
+                </div>
             </div>
-        </section>
-        <!-- INSTRUCTION -->
-        <section>
-            <ol class="instruction-list" data-header="How it works">
-                <li><i class="fas fa-mobile-alt instruction-list__icon"></i>Chose a restaurant</li>
-                <li><i class="fas fa-list-ul instruction-list__icon"></i>Create your menu</li>
-                <li><i class="fas fa-store instruction-list__icon"></i>Go enjoy it at the restaurant</li>
-               
-            </ol>
-        </section>
 
-        <footer>
+            <div class="restaurants__btn">
+                <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg">
+                <div class="caption">
+                    <div class="caption__text">
+                        <p>Bastille</p>
+                        <p>New York</p>
+                    </div>
+                    <i class="far fa-heart caption__icon"></i>
+                </div>
+            </div>
 
-        </footer>
-    </body>
+            <div class="restaurants__btn">
+                <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg">
+                <div class="caption">
+                    <div class="caption__text">
+                        <p>Le Gourmand</p>
+                        <p>New York</p>
+                    </div>
+                    <i class="far fa-heart caption__icon"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+</body>
+
 </html>

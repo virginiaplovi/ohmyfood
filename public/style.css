@@ -83,8 +83,8 @@ body {
   content: attr(data-header);
   font-size: 150%;
   font-weight: bold;
-  margin-left: -15px;
   margin-bottom: 20px;
+  margin-left: -15px;
 }
 .instruction-list li {
   counter-increment: step-counter;
@@ -106,6 +106,58 @@ body {
   font-weight: bold;
   padding: 3px 8px;
   border-radius: 20px;
+}
+.instruction-list li:hover {
+  color: initial;
+}
+.instruction-list li:hover .instruction-list__icon:hover {
+  color: #9356DC;
+}
+
+.restaurants {
+  margin: 0px;
+  padding: 40px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F4F4F4;
+}
+.restaurants__header {
+  font-size: 150%;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: -15px;
+}
+.restaurants__btn {
+  background-color: white;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.restaurants__btn img {
+  width: 100%;
+  object-fit: cover;
+  height: 150px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-bottom: -10px;
+}
+.restaurants__btn .caption {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.restaurants__btn .caption__text {
+  margin-left: 10px;
+}
+.restaurants__btn .caption__text > p:first-child {
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+.restaurants__btn .caption__icon {
+  align-self: center;
+  padding: 20px;
+  font-size: 150%;
 }
 
 /*# sourceMappingURL=style.css.map */
