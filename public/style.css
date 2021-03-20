@@ -67,7 +67,7 @@ body {
 }
 .explore__btn .anchor {
   text-decoration: none;
-  color: initial;
+  color: #ffffff;
 }
 .explore__btn .anchor:visited {
   color: #ffffff;

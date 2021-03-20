@@ -25,7 +25,7 @@ $white: #ffffff;
 }
 @mixin link($color: $white) {
     text-decoration: none;
-    color: initial;
+    color: $color;
     &:visited {
         color: $color;
     }
