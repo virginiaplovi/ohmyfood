@@ -67,6 +67,7 @@ body {
 }
 .explore__btn .anchor {
   text-decoration: none;
+  color: initial;
 }
 .explore__btn .anchor:visited {
   color: #ffffff;
@@ -142,6 +143,7 @@ body {
   box-shadow: 3px 3px 14px 0px #a7a7a7;
   position: relative;
   text-decoration: none;
+  color: initial;
 }
 .restaurants__btn:visited {
   color: initial;
