@@ -204,9 +204,32 @@ body {
 .restaurants__btn .caption__icon--full:hover {
   transform: scale(1.15);
   background: -webkit-linear-gradient(198deg, #9356DC 5%, #FF79DA 49%);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  padding: 30px 10%;
+}
+.footer-container__logo {
+  font-family: "Shrikhand", cursive;
+  color: #F4F4F4;
+  font-size: 120%;
+  padding-bottom: 20px;
+}
+.footer-container__link {
+  text-decoration: none;
+  color: #F4F4F4;
+}
+.footer-container__link:visited {
+  color: #F4F4F4;
+}
+.footer-container__icon {
+  padding-right: 10px;
+  width: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

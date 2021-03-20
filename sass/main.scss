@@ -228,11 +228,10 @@ $white: #ffffff;
                     @include heart-icon;
                     color: transparent;
                     transition: transform 700ms, background-color 300ms 150ms;
-                    
+
                         &:hover {
                         transform: scale(1.15);
                         background: -webkit-linear-gradient(198deg, $color-primary 5%, $color-secondary 49%);
-                        background-clip: text;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                  }
@@ -243,6 +242,29 @@ $white: #ffffff;
         }
     }
 
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    background-color: darken($color-background , 75%);
+    padding: 30px 10%;
+
+    &__logo {
+        font-family: 'Shrikhand', cursive;
+        color: $color-background;
+        font-size: 120%;
+        padding-bottom: 20px;
+    }
+
+    &__link {
+        @include link ($color-background);
+    }
+
+    &__icon {
+        padding-right: 10px;
+        width: 15px;
+    }
 }
 
 
