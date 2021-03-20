@@ -17,18 +17,31 @@ $color-tertiary: #99E2D0;
 $color-background: #F4F4F4;
 $white: #ffffff;
 
+/*---Mixin---*/
+
 @mixin header {
     font-size:150%;
     font-weight:bold;
     margin-bottom: 20px;
     margin-left:-15px;
 }
+
 @mixin link($color: $white) {
     text-decoration: none;
     color: $color;
     &:visited {
         color: $color;
     }
+}
+
+@mixin heart-icon {
+    align-self: center;
+    padding: 20px;
+    font-size: 150%;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
 
 /*---Page---*/
@@ -205,21 +218,31 @@ $white: #ffffff;
             }
 
             &__icon {
-                align-self: center;
-                padding: 20px;
-                font-size: 150%;
-                cursor: pointer;
-                position: relative;
-                transition: transform 450ms, color 300ms 150ms;
+                @include heart-icon;
+
                 &:hover {
-                    transform: scale(1.13);
-                    background: -webkit-linear-gradient(198deg, $color-primary 5%, $color-secondary 49%);
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    color: transparent;
                 }
+                
+                &--full {
+                    @include heart-icon;
+                    color: transparent;
+                    transition: transform 700ms, background-color 300ms 150ms;
+                    
+                        &:hover {
+                        transform: scale(1.15);
+                        background: -webkit-linear-gradient(198deg, $color-primary 5%, $color-secondary 49%);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                 }
+                }
+
+                
             }
         }
     }
 
 }
+
+

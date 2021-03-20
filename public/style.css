@@ -9,6 +9,7 @@ body {
 }
 
 /*---Variables, Utils---*/
+/*---Mixin---*/
 /*---Page---*/
 .logo {
   margin: 20px auto;
@@ -182,11 +183,26 @@ body {
   padding: 20px;
   font-size: 150%;
   cursor: pointer;
-  position: relative;
-  transition: transform 450ms, color 300ms 150ms;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 }
 .restaurants__btn .caption__icon:hover {
-  transform: scale(1.13);
+  color: transparent;
+}
+.restaurants__btn .caption__icon--full {
+  align-self: center;
+  padding: 20px;
+  font-size: 150%;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: transparent;
+  transition: transform 700ms, background-color 300ms 150ms;
+}
+.restaurants__btn .caption__icon--full:hover {
+  transform: scale(1.15);
   background: -webkit-linear-gradient(198deg, #9356DC 5%, #FF79DA 49%);
   background-clip: text;
   -webkit-background-clip: text;
