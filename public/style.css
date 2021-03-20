@@ -50,7 +50,7 @@ body {
 }
 .explore__btn {
   border-radius: 30px;
-  color: white;
+  color: #ffffff;
   background: #FF79DA;
   background: linear-gradient(175deg, #FF79DA 0%, #9356DC 98%);
   padding: 10px;
@@ -64,6 +64,12 @@ body {
 }
 .explore__btn:hover {
   transform: scale(1.15);
+}
+.explore__btn .anchor {
+  text-decoration: none;
+}
+.explore__btn .anchor:visited {
+  color: #ffffff;
 }
 
 .instruction-list {
@@ -102,7 +108,7 @@ body {
   margin-left: -30px;
   font-size: 80%;
   background-color: #9356DC;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
   padding: 3px 8px;
   border-radius: 20px;
@@ -129,10 +135,16 @@ body {
   margin-left: -15px;
 }
 .restaurants__btn {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 20px;
   width: 100%;
   margin-bottom: 20px;
+  box-shadow: 3px 3px 14px 0px #a7a7a7;
+  position: relative;
+  text-decoration: none;
+}
+.restaurants__btn:visited {
+  color: initial;
 }
 .restaurants__btn img {
   width: 100%;
@@ -141,6 +153,15 @@ body {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   margin-bottom: -10px;
+}
+.restaurants__btn .new {
+  position: absolute;
+  background-color: #99E2D0;
+  color: #278870;
+  padding: 5px 20px;
+  border-radius: 3px;
+  top: 12px;
+  right: 12px;
 }
 .restaurants__btn .caption {
   display: flex;
@@ -158,6 +179,16 @@ body {
   align-self: center;
   padding: 20px;
   font-size: 150%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 450ms, color 300ms 150ms;
+}
+.restaurants__btn .caption__icon:hover {
+  transform: scale(1.13);
+  background: -webkit-linear-gradient(198deg, #9356DC 5%, #FF79DA 49%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */

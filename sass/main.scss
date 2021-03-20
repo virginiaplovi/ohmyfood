@@ -15,12 +15,19 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $color-background: #F4F4F4;
+$white: #ffffff;
 
 @mixin header {
     font-size:150%;
     font-weight:bold;
     margin-bottom: 20px;
     margin-left:-15px;
+}
+@mixin link($color: $white) {
+    text-decoration: none;
+    &:visited {
+        color: $color;
+    }
 }
 
 /*---Page---*/
@@ -70,7 +77,7 @@ $color-background: #F4F4F4;
 
     &__btn {
         border-radius: 30px;
-        color: white;
+        color: $white;
         background: $color-secondary;
         background: linear-gradient(175deg, $color-secondary 0%, $color-primary 98%);
         padding: 10px;
@@ -81,8 +88,14 @@ $color-background: #F4F4F4;
         box-shadow: 3px 3px 14px 0px #a7a7a7;
         transform: scale(1);
         transition: transform 400ms;
+        
+
         &:hover {
             transform: scale(1.15);
+        }
+
+        & .anchor {
+            @include link;
         }
     }
 }
@@ -122,7 +135,7 @@ $color-background: #F4F4F4;
             margin-left: -30px;
             font-size: 80%;
             background-color: $color-primary;
-            color: white;
+            color: $white;
             font-weight: bold;
             padding: 3px 8px;
             border-radius: 20px;  
@@ -150,10 +163,13 @@ $color-background: #F4F4F4;
     }
 
     &__btn {
-        background-color: white;
+        background-color: $white;
         border-radius: 20px;
         width: 100%;
         margin-bottom: 20px;
+        box-shadow: 3px 3px 14px 0px #a7a7a7;
+        position: relative;
+        @include link ($color: initial);
 
         img {
             width: 100%;
@@ -162,6 +178,16 @@ $color-background: #F4F4F4;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             margin-bottom: -10px;
+        }
+
+        & .new {
+            position: absolute;
+            background-color: $color-tertiary;
+            color: darken($color-tertiary , 40%);
+            padding: 5px 20px;
+            border-radius: 3px;
+            top: 12px;
+            right: 12px;
         }
 
         & .caption {
@@ -181,6 +207,16 @@ $color-background: #F4F4F4;
                 align-self: center;
                 padding: 20px;
                 font-size: 150%;
+                cursor: pointer;
+                position: relative;
+                transition: transform 450ms, color 300ms 150ms;
+                &:hover {
+                    transform: scale(1.13);
+                    background: -webkit-linear-gradient(198deg, $color-primary 5%, $color-secondary 49%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
             }
         }
     }
