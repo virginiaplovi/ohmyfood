@@ -34,10 +34,10 @@ $white: #ffffff;
     }
 }
 
-@mixin heart-icon {
+@mixin heart-icon($font-size: 150%) {
     align-self: center;
     padding: 20px;
-    font-size: 150%;
+    font-size: $font-size;
     cursor: pointer;
     position: absolute;
     bottom: 5px;
@@ -47,8 +47,19 @@ $white: #ffffff;
 /*---Page---*/
 
 .logo {
-    margin: 20px auto;
+    margin: 20px auto 10px auto;
     text-align: center;
+
+    &__icon {
+        position: absolute;
+        font-size: 150%;
+        top: 22px;
+        left: 20px;
+        color: initial;
+        &:visited {
+            color: initial;
+        }
+    }
 }
 
 .location {
@@ -267,4 +278,55 @@ $white: #ffffff;
     }
 }
 
+/*--MENU PAGES--*/
 
+.background-img {
+    width: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    height: 250px;
+}
+
+.menu {
+    background-color: $color-background;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -70px;
+    position: relative;
+
+    &__header {
+        font-family: 'Shrikhand', cursive;
+        @include header;
+        padding: 30px 30px 10px 30px;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        @include heart-icon(100%);
+
+            &:hover {
+                color: transparent;
+            }
+                
+            &--full {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                @include heart-icon(100%);
+                color: transparent;
+                // transition: transform 700ms, background-color 300ms 150ms;
+
+                    &:hover {
+                    // transform: scale(1.15);
+                    background: -webkit-linear-gradient(198deg, $color-primary 5%, $color-secondary 49%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    }
+            }
+
+                
+    }
+    
+}
