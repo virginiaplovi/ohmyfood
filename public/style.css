@@ -75,6 +75,8 @@ body {
 }
 .explore__btn:hover {
   transform: scale(1.15);
+  background: linear-gradient(to right bottom, #ff93e1, #a16be0);
+  box-shadow: 3px 3px 14px 0px #5b5b5b;
 }
 .explore__btn .anchor {
   text-decoration: none;
@@ -329,6 +331,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  box-shadow: 3px 3px 14px 0px #a7a7a7;
 }
 .menu-item__text {
   overflow: hidden;
@@ -344,6 +347,7 @@ body {
 }
 .menu-item__text > p:last-child {
   margin: 0;
+  color: #4D4D4D;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -370,6 +374,8 @@ body {
 }
 .order-btn:hover {
   transform: scale(1.15);
+  background: linear-gradient(to right bottom, #ff93e1, #a16be0);
+  box-shadow: 3px 3px 14px 0px #5b5b5b;
 }
 
 /*# sourceMappingURL=style.css.map */

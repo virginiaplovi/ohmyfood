@@ -52,7 +52,11 @@ $white: #ffffff;
     
 }
 
-@mixin main-buttons($width: 50%) {
+@mixin shadow($value: 0%) {
+    box-shadow: 3px 3px 14px 0px darken(#a7a7a7, $value);
+}
+
+@mixin main-btn($width: 50%) {
     border-radius: 30px;
     color: $white;
     background: $color-secondary;
@@ -62,11 +66,13 @@ $white: #ffffff;
     user-select: none;
     width: $width;
     margin: 0 auto;
-    box-shadow: 3px 3px 14px 0px #a7a7a7;
+    @include shadow;
     transform: scale(1);
     transition: transform 400ms;
         &:hover {
             transform: scale(1.15);
+            background: linear-gradient(to right bottom, lighten($color-secondary, 5), lighten($color-primary, 5));
+            @include shadow(30%);
         }
 }
 
@@ -100,12 +106,12 @@ $white: #ffffff;
 
     &__icon {
         flex-basis: 30px;
-        color: #4D4D4D;
+        color: $color-text;
     }
 
     &__text {
         flex-basis: 150px;
-        color: #4D4D4D;
+        color: $color-text;
         font-weight: bold;
     }
 }
@@ -127,7 +133,7 @@ $white: #ffffff;
     }
 
     &__btn {
-        @include main-buttons;
+        @include main-btn;
 
         & .anchor {
             @include link;
@@ -145,7 +151,7 @@ $white: #ffffff;
     justify-content: center;
 
     &__icon {
-        color: #4D4D4D;
+        color: $color-text;
         padding-right: 20px;
     }
 
@@ -162,7 +168,7 @@ $white: #ffffff;
         padding: 20px;
         border-radius: 20px;
         font-weight: bold;
-        box-shadow: 3px 3px 14px 0px #a7a7a7;
+        @include shadow;
         
         &::before{
             content: counter(step-counter);
@@ -202,7 +208,7 @@ $white: #ffffff;
         border-radius: 20px;
         width: 100%;
         margin-bottom: 20px;
-        box-shadow: 3px 3px 14px 0px #a7a7a7;
+        @include shadow;
         position: relative;
         @include link ($color: initial);
 
@@ -218,7 +224,7 @@ $white: #ffffff;
         & .new {
             position: absolute;
             background-color: $color-tertiary;
-            color: darken($color-tertiary , 40%);
+            color: darken($color-tertiary, 40%);
             padding: 5px 20px;
             border-radius: 3px;
             top: 12px;
@@ -371,6 +377,7 @@ $white: #ffffff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @include shadow;
 
     &__text {
         @include text-overflow;
@@ -382,6 +389,7 @@ $white: #ffffff;
         }
         > p:last-child {
             margin: 0;
+            color: $color-text;
             @include text-overflow;
         }
     }
@@ -392,7 +400,7 @@ $white: #ffffff;
 }
 
 .order-btn {
-    @include main-buttons($width: 30%);
+    @include main-btn($width: 30%);
     text-align: center;
     margin-top: 30px;
 }
