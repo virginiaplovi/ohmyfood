@@ -15,14 +15,15 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $color-background: #F4F4F4;
+$color-text: #4D4D4D;
 $white: #ffffff;
 
 /*---Mixin---*/
 
-@mixin header {
+@mixin header ($size: 20px) {
     font-size:150%;
     font-weight:bold;
-    margin-bottom: 20px;
+    margin-bottom: $size;
     margin-left:-15px;
 }
 
@@ -42,6 +43,31 @@ $white: #ffffff;
     position: absolute;
     bottom: 5px;
     right: 5px;
+}
+
+@mixin text-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+}
+
+@mixin main-buttons($width: 50%) {
+    border-radius: 30px;
+    color: $white;
+    background: $color-secondary;
+    background: linear-gradient(175deg, $color-secondary 0%, $color-primary 98%);
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    width: $width;
+    margin: 0 auto;
+    box-shadow: 3px 3px 14px 0px #a7a7a7;
+    transform: scale(1);
+    transition: transform 400ms;
+        &:hover {
+            transform: scale(1.15);
+        }
 }
 
 /*---Page---*/
@@ -96,28 +122,12 @@ $white: #ffffff;
     }
 
     &__txt {
-        color: #4D4D4D;
+        color: $color-text;
         padding: 0 25px 25px 25px;
     }
 
     &__btn {
-        border-radius: 30px;
-        color: $white;
-        background: $color-secondary;
-        background: linear-gradient(175deg, $color-secondary 0%, $color-primary 98%);
-        padding: 10px;
-        cursor: pointer;
-        user-select: none;
-        width: 50%;
-        margin: 0 auto;
-        box-shadow: 3px 3px 14px 0px #a7a7a7;
-        transform: scale(1);
-        transition: transform 400ms;
-        
-
-        &:hover {
-            transform: scale(1.15);
-        }
+        @include main-buttons;
 
         & .anchor {
             @include link;
@@ -293,11 +303,12 @@ $white: #ffffff;
     border-top-right-radius: 40px;
     margin-top: -70px;
     position: relative;
+    padding: 30px 5%;
 
     &__header {
         font-family: 'Shrikhand', cursive;
-        @include header;
-        padding: 30px 30px 10px 30px;
+        @include header ($size: 0);
+        padding-left: 5%;
     }
 
     &__icon {
@@ -328,5 +339,60 @@ $white: #ffffff;
 
                 
     }
+}
+
+.submenu {
+    display: flex;
+    flex-direction: column;
     
+    &__title {
+        color: $color-text;
+        position: relative;
+        padding-bottom: 5px;
+        margin-top: 20px;
+        &::after {
+            content: "";
+            width: 40px;
+            height: 3px;
+            background-color: $color-tertiary;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+}
+
+.menu-item {
+    background-color: $white;
+    border-radius: 15px;
+    padding: 10px;
+    height: 50px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__text {
+        @include text-overflow;
+
+        > h4:first-child {
+            margin-bottom: 5px;
+            margin-top:0;
+            @include text-overflow;
+        }
+        > p:last-child {
+            margin: 0;
+            @include text-overflow;
+        }
+    }
+
+    &__price {
+        align-self: flex-start;
+    }
+}
+
+.order-btn {
+    @include main-buttons($width: 30%);
+    text-align: center;
+    margin-top: 30px;
 }

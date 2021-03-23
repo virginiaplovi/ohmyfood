@@ -256,14 +256,15 @@ body {
   border-top-right-radius: 40px;
   margin-top: -70px;
   position: relative;
+  padding: 30px 5%;
 }
 .menu__header {
   font-family: "Shrikhand", cursive;
   font-size: 150%;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   margin-left: -15px;
-  padding: 30px 30px 10px 30px;
+  padding-left: 5%;
 }
 .menu__icon {
   position: absolute;
@@ -297,6 +298,78 @@ body {
   background: -webkit-linear-gradient(198deg, #9356DC 5%, #FF79DA 49%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+}
+.submenu__title {
+  color: #4D4D4D;
+  position: relative;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+.submenu__title::after {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.menu-item {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 10px;
+  height: 50px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu-item__text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu-item__text > h4:first-child {
+  margin-bottom: 5px;
+  margin-top: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu-item__text > p:last-child {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu-item__price {
+  align-self: flex-start;
+}
+
+.order-btn {
+  border-radius: 30px;
+  color: #ffffff;
+  background: #FF79DA;
+  background: linear-gradient(175deg, #FF79DA 0%, #9356DC 98%);
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  width: 30%;
+  margin: 0 auto;
+  box-shadow: 3px 3px 14px 0px #a7a7a7;
+  transform: scale(1);
+  transition: transform 400ms;
+  text-align: center;
+  margin-top: 30px;
+}
+.order-btn:hover {
+  transform: scale(1.15);
 }
 
 /*# sourceMappingURL=style.css.map */
