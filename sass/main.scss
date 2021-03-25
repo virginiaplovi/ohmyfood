@@ -35,14 +35,12 @@ $white: #ffffff;
     }
 }
 
-@mixin heart-icon($font-size: 150%) {
-    align-self: center;
-    padding: 20px;
-    font-size: $font-size;
+@mixin heart-icon($size: 25px 25px 0 0) {
+    font-size: 150%;
     cursor: pointer;
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    margin: $size;
+    
 }
 
 @mixin text-overflow {
@@ -169,6 +167,8 @@ $white: #ffffff;
         border-radius: 20px;
         font-weight: bold;
         @include shadow;
+        transform: scale(1);
+        transition: transform 400ms;
         
         &::before{
             content: counter(step-counter);
@@ -183,8 +183,11 @@ $white: #ffffff;
         }
 
         &:hover {
-            color: initial;
-            .instruction-list__icon:hover {
+            color: $color-text;
+            @include shadow(30%);
+            transform: scale(1.05);
+            
+            .instruction-list__icon {
                 color: $color-primary;
             }
         }
@@ -246,19 +249,16 @@ $white: #ffffff;
 
             &__icon {
                 @include heart-icon;
-
-                &:hover {
-                    color: transparent;
-                }
                 
                 &--full {
                     @include heart-icon;
                     color: transparent;
-                    transition: transform 700ms, background-color 300ms 150ms;
+                    transform: scale(0.3);
+                    transition: transform 300ms;
 
                         &:hover {
-                        transform: scale(1.15);
-                        background: -webkit-linear-gradient(198deg, $color-primary 5%, $color-secondary 49%);
+                        transform: scale(0.86);
+                        background: -webkit-linear-gradient(198deg, $color-primary 10%, $color-secondary 49%);
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                  }
@@ -310,41 +310,44 @@ $white: #ffffff;
     margin-top: -70px;
     position: relative;
     padding: 30px 5%;
+}
 
-    &__header {
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__title {
         font-family: 'Shrikhand', cursive;
         @include header ($size: 0);
         padding-left: 5%;
     }
 
     &__icon {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        @include heart-icon(100%);
+        @include heart-icon(5px);
+        
+        &--full {
+            @include heart-icon(5px);
+            color: transparent;
+            transform: scale(0.3);
+            transition: transform 300ms;
 
             &:hover {
-                color: transparent;
+                transform: scale(0.86);
+                background: -webkit-linear-gradient(198deg, $color-primary 10%, $color-secondary 49%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
-                
-            &--full {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                @include heart-icon(100%);
-                color: transparent;
-                // transition: transform 700ms, background-color 300ms 150ms;
+        }
 
-                    &:hover {
-                    // transform: scale(1.15);
-                    background: -webkit-linear-gradient(198deg, $color-primary 5%, $color-secondary 49%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    }
-            }
-
-                
+        
     }
+}
+
+.heart-container {
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .submenu {
