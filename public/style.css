@@ -362,16 +362,16 @@ body {
   transition: 1s;
   transform: translateX(65px);
 }
-.menu-item .check:hover {
-  transform: translateX(0px);
-}
-.menu-item .check:hover .check__icon {
-  transition-duration: 600ms;
-  transform: rotate(360deg);
-}
 .menu-item .check__icon {
   transform: rotate(0deg);
   transition-duration: 600ms;
+}
+.menu-item:hover .check {
+  transform: translateX(0px);
+}
+.menu-item:hover .check__icon {
+  transition-duration: 600ms;
+  transform: rotate(360deg);
 }
 
 .order-btn {
