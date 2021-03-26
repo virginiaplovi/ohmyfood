@@ -339,8 +339,6 @@ $white: #ffffff;
                 -webkit-text-fill-color: transparent;
             }
         }
-
-        
     }
 }
 
@@ -374,8 +372,7 @@ $white: #ffffff;
 .menu-item {
     background-color: $white;
     border-radius: 15px;
-    padding: 10px;
-    height: 50px;
+    height: 70px;
     margin-top: 15px;
     display: flex;
     flex-direction: row;
@@ -383,6 +380,7 @@ $white: #ffffff;
     @include shadow;
 
     &__text {
+        padding: 10px;
         @include text-overflow;
 
         > h4:first-child {
@@ -399,6 +397,33 @@ $white: #ffffff;
 
     &__price {
         align-self: flex-start;
+        padding: 10px;
+    }
+
+    & .check {
+        color: $white;
+        background-color: $color-tertiary;
+        font-size: 150%;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        padding: 23px;
+        transition: 1s;
+        transform: translateX(65px);
+        
+        
+        &:hover {
+            transform: translateX(0px);
+            .check__icon {
+                transition-duration: 600ms;
+                transform: rotate(360deg);
+            }
+            
+        }
+
+        &__icon {
+            transform: rotate(0deg);
+            transition-duration: 600ms;
+        }
     }
 }
 
