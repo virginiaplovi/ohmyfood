@@ -327,9 +327,11 @@ body {
   flex-direction: row;
   justify-content: space-between;
   box-shadow: 3px 3px 14px 0px #a7a7a7;
+  overflow: hidden;
 }
 .menu-item__text {
   padding: 10px;
+  width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -344,13 +346,16 @@ body {
 .menu-item__text > p:last-child {
   margin: 0;
   color: #4D4D4D;
+  width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 .menu-item__price {
-  align-self: flex-start;
-  padding: 10px;
+  font-weight: bold;
+  padding: 34px 10px 0 0;
+  transition: 1s;
+  transform: translateX(65px);
 }
 .menu-item .check {
   color: #ffffff;
@@ -360,7 +365,7 @@ body {
   border-bottom-right-radius: 15px;
   padding: 23px;
   transition: 1s;
-  transform: translateX(65px);
+  transform: translateX(70px);
 }
 .menu-item .check__icon {
   transform: rotate(0deg);
@@ -368,10 +373,16 @@ body {
 }
 .menu-item:hover .check {
   transform: translateX(0px);
+  transition-timing-function: ease-in-out;
 }
 .menu-item:hover .check__icon {
   transition-duration: 600ms;
   transform: rotate(360deg);
+  transition-delay: 400ms;
+}
+.menu-item:hover .menu-item__price {
+  transform: translateX(0px);
+  transition-timing-function: ease-in-out;
 }
 
 .order-btn {
