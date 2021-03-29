@@ -72,6 +72,7 @@ body {
   box-shadow: 3px 3px 14px 0px #a7a7a7;
   transform: scale(1);
   transition: transform 400ms;
+  max-width: 220px;
 }
 .explore__btn:hover {
   transform: scale(1.15);
@@ -88,6 +89,7 @@ body {
 
 .instruction-list {
   width: 80%;
+  max-width: 350px;
   margin: 40px auto;
   padding: 0;
   list-style-type: none;
@@ -142,11 +144,13 @@ body {
   margin: 0px;
   padding: 40px 10%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   background-color: #F4F4F4;
 }
 .restaurants__header {
+  flex-basis: 100%;
   font-size: 150%;
   font-weight: bold;
   margin-bottom: 20px;
@@ -156,7 +160,8 @@ body {
   background-color: #ffffff;
   border-radius: 20px;
   width: 100%;
-  margin-bottom: 20px;
+  max-width: 450px;
+  margin: 0 auto 20px auto;
   box-shadow: 3px 3px 14px 0px #a7a7a7;
   position: relative;
   text-decoration: none;
@@ -332,7 +337,8 @@ body {
 }
 .menu-item__text {
   padding: 10px;
-  width: 100%;
+  width: 78%;
+  transition: width 1s;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -357,6 +363,8 @@ body {
   padding: 34px 10px 0 0;
   transition: 1s;
   transform: translateX(65px);
+  position: absolute;
+  right: 80px;
 }
 .menu-item .check {
   color: #ffffff;
@@ -367,6 +375,8 @@ body {
   padding: 23px;
   transition: 1s;
   transform: translateX(70px);
+  position: absolute;
+  right: 0;
 }
 .menu-item .check__icon {
   transform: rotate(0deg);
@@ -385,6 +395,9 @@ body {
   transform: translateX(0px);
   transition-timing-function: ease-in-out;
 }
+.menu-item:hover .menu-item__text {
+  width: 60%;
+}
 
 .order-btn {
   border-radius: 30px;
@@ -399,6 +412,7 @@ body {
   box-shadow: 3px 3px 14px 0px #a7a7a7;
   transform: scale(1);
   transition: transform 400ms;
+  max-width: 120px;
   text-align: center;
   margin-top: 30px;
 }
