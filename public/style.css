@@ -411,7 +411,7 @@ body {
 @keyframes FadeIn {
   0% {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.6);
   }
   85% {
     transform: scale(1.05);
@@ -421,14 +421,14 @@ body {
     transform: scale(1);
   }
   from {
-    bottom: -50px;
+    bottom: -100px;
   }
   to {
     bottom: 0px;
   }
 }
 .submenu .menu-item {
-  animation: FadeIn 1s linear;
+  animation: FadeIn 600ms linear;
   animation-fill-mode: backwards;
 }
 
@@ -445,27 +445,83 @@ body {
 }
 
 .submenu .menu-item:nth-child(6) {
-  animation-delay: 0.8s;
-}
-
-.submenu .menu-item:nth-child(7) {
-  animation-delay: 1s;
-}
-
-.submenu .menu-item:nth-child(8) {
   animation-delay: 1.2s;
 }
 
-.submenu .menu-item:nth-child(10) {
+.submenu .menu-item:nth-child(7) {
   animation-delay: 1.4s;
 }
 
-.submenu .menu-item:nth-child(11) {
+.submenu .menu-item:nth-child(8) {
   animation-delay: 1.6s;
 }
 
+.submenu .menu-item:nth-child(10) {
+  animation-delay: 2.2s;
+}
+
+.submenu .menu-item:nth-child(11) {
+  animation-delay: 2.4s;
+}
+
 .submenu .menu-item:nth-child(12) {
-  animation-delay: 1.8s;
+  animation-delay: 2.6s;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: loader 2s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader__container {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dots {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.dots--primary {
+  background-color: #9356DC;
+  animation: pulse 0.4s ease 0s infinite alternate;
+}
+.dots--secondary {
+  background-color: #FF79DA;
+  animation: pulse 0.4s ease 0.2s infinite alternate;
+}
+.dots--tertiary {
+  background-color: #99E2D0;
+  animation: pulse 0.4s ease 0.4s infinite alternate;
 }
 
 /*# sourceMappingURL=style.css.map */
