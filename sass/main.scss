@@ -18,13 +18,30 @@ $color-background: #F4F4F4;
 $color-text: #4D4D4D;
 $white: #ffffff;
 
+/*---Maps, BREAKPOINTS---*/
+
+$breakpoints: (
+    tablets: 665px,
+    desktops: 1024px
+);
+
 /*---Mixin---*/
+
+@mixin tablets {
+    @media screen and (min-width: map-get($breakpoints, tablets)){
+        @content;
+    }
+}
+@mixin desktops {
+    @media screen and (min-width: map-get($breakpoints, desktops )){
+        @content;
+    }   
+}
 
 @mixin header ($size: 20px) {
     font-size:150%;
     font-weight:bold;
     margin-bottom: $size;
-    margin-left:-15px;
 }
 
 @mixin link($color: $white) {
@@ -139,25 +156,28 @@ $white: #ffffff;
         }
     }
 }
-
+.list-header {
+    @include header;
+    padding: 40px 10% 0 10%;
+}
 .instruction-list {
     width: 80%;
     max-width: 350px;
-    margin: 40px auto;
+    margin: 0 auto 40px auto;
     padding: 0;
     list-style-type: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include tablets {
+        width: 90%;
+        max-width: 1100px;
+        flex-direction: row;
+    }
 
     &__icon {
         color: $color-text;
         padding-right: 20px;
-    }
-
-    &::before {
-        content:attr(data-header);
-        @include header
     }
 
     & li {
@@ -171,6 +191,11 @@ $white: #ffffff;
         @include shadow;
         transform: scale(1);
         transition: transform 400ms;
+        @include tablets {
+            margin: 0 15px;
+            width: 80%;
+            max-width: 255px;
+        }
 
         &::before{
             content: counter(step-counter);
@@ -204,6 +229,11 @@ $white: #ffffff;
     flex-wrap: wrap;
     justify-content: center;
     background-color: $color-background;
+    @include tablets {
+        padding: 40px 10%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
 
     &__header {
         flex-basis: 100%;
@@ -219,6 +249,10 @@ $white: #ffffff;
         @include shadow;
         position: relative;
         @include link ($color: initial);
+        @include tablets {
+            width: 45%;
+            max-width: 480px;
+        }
 
         img {
             width: 100%;
@@ -315,6 +349,10 @@ $white: #ffffff;
     margin-top: -70px;
     position: relative;
     padding: 30px 5%;
+    max-width: 1300px;
+    @include desktops {
+        margin: -70px auto 1px auto;
+    }
 }
 
 .header-container {
@@ -356,12 +394,23 @@ $white: #ffffff;
 .submenu {
     display: flex;
     flex-direction: column;
+    @include desktops {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 
     &__title {
         color: $color-text;
         position: relative;
         padding-bottom: 5px;
         margin-top: 20px;
+        @include tablets {
+            margin: 20px auto 0 auto;
+        }
+        @include desktops {
+            flex-basis: 100%;
+        }
+
         &::after {
             content: "";
             width: 40px;
@@ -385,6 +434,15 @@ $white: #ffffff;
     @include shadow;
     overflow: hidden;
     position: relative;
+    @include tablets {
+        max-width: 600px;
+        width: 100%;
+        margin: 15px auto 0 auto;
+    }
+    @include desktops {
+        max-width: 400px;
+        width: 32%;
+    }
 
     &__text {
         padding: 10px;

@@ -9,6 +9,7 @@ body {
 }
 
 /*---Variables, Utils---*/
+/*---Maps, BREAKPOINTS---*/
 /*---Mixin---*/
 /*---Page---*/
 .logo {
@@ -87,26 +88,33 @@ body {
   color: #ffffff;
 }
 
+.list-header {
+  font-size: 150%;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 40px 10% 0 10%;
+}
+
 .instruction-list {
   width: 80%;
   max-width: 350px;
-  margin: 40px auto;
+  margin: 0 auto 40px auto;
   padding: 0;
   list-style-type: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+@media screen and (min-width: 665px) {
+  .instruction-list {
+    width: 90%;
+    max-width: 1100px;
+    flex-direction: row;
+  }
+}
 .instruction-list__icon {
   color: #4D4D4D;
   padding-right: 20px;
-}
-.instruction-list::before {
-  content: attr(data-header);
-  font-size: 150%;
-  font-weight: bold;
-  margin-bottom: 20px;
-  margin-left: -15px;
 }
 .instruction-list li {
   counter-increment: step-counter;
@@ -119,6 +127,13 @@ body {
   box-shadow: 3px 3px 14px 0px #a7a7a7;
   transform: scale(1);
   transition: transform 400ms;
+}
+@media screen and (min-width: 665px) {
+  .instruction-list li {
+    margin: 0 15px;
+    width: 80%;
+    max-width: 255px;
+  }
 }
 .instruction-list li::before {
   content: counter(step-counter);
@@ -149,12 +164,18 @@ body {
   justify-content: center;
   background-color: #F4F4F4;
 }
+@media screen and (min-width: 665px) {
+  .restaurants {
+    padding: 40px 10%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
 .restaurants__header {
   flex-basis: 100%;
   font-size: 150%;
   font-weight: bold;
   margin-bottom: 20px;
-  margin-left: -15px;
 }
 .restaurants__btn {
   background-color: #ffffff;
@@ -169,6 +190,12 @@ body {
 }
 .restaurants__btn:visited {
   color: initial;
+}
+@media screen and (min-width: 665px) {
+  .restaurants__btn {
+    width: 45%;
+    max-width: 480px;
+  }
 }
 .restaurants__btn img {
   width: 100%;
@@ -260,6 +287,12 @@ body {
   margin-top: -70px;
   position: relative;
   padding: 30px 5%;
+  max-width: 1300px;
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    margin: -70px auto 1px auto;
+  }
 }
 
 .header-container {
@@ -272,7 +305,6 @@ body {
   font-size: 150%;
   font-weight: bold;
   margin-bottom: 0;
-  margin-left: -15px;
   padding-left: 5%;
 }
 .header-container__icon {
@@ -307,11 +339,27 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 1024px) {
+  .submenu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .submenu__title {
   color: #4D4D4D;
   position: relative;
   padding-bottom: 5px;
   margin-top: 20px;
+}
+@media screen and (min-width: 665px) {
+  .submenu__title {
+    margin: 20px auto 0 auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .submenu__title {
+    flex-basis: 100%;
+  }
 }
 .submenu__title::after {
   content: "";
@@ -334,6 +382,19 @@ body {
   box-shadow: 3px 3px 14px 0px #a7a7a7;
   overflow: hidden;
   position: relative;
+}
+@media screen and (min-width: 665px) {
+  .menu-item {
+    max-width: 600px;
+    width: 100%;
+    margin: 15px auto 0 auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu-item {
+    max-width: 400px;
+    width: 32%;
+  }
 }
 .menu-item__text {
   padding: 10px;
