@@ -1,0 +1,17 @@
+/*---HEADER---*/
+
+.logo {
+    margin: 20px auto 10px auto;
+    text-align: center;
+
+    &__icon {
+        position: absolute;
+        font-size: 150%;
+        top: 22px;
+        left: 20px;
+        color: initial;
+        &:visited {
+            color: initial;
+        }
+    }
+}

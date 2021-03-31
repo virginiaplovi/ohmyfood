@@ -1,0 +1,68 @@
+/*---MIXINS---*/
+
+@mixin header ($size: 20px) {
+    font-size:150%;
+    font-weight:bold;
+    margin-bottom: $size;
+}
+
+@mixin link($color: $white) {
+    text-decoration: none;
+    color: $color;
+    &:visited {
+        color: $color;
+    }
+}
+
+@mixin heart-icon($size: 25px 25px 0 0) {
+    font-size: 150%;
+    cursor: pointer;
+    position: absolute;
+    margin: $size;
+
+}
+
+@mixin heart-hover {
+    color: transparent;
+    transform: scale(0.3);
+    transition: transform 300ms;
+
+    &:hover {
+        transform: scale(0.86);
+        background: -webkit-linear-gradient(198deg, $color-primary 10%, $color-secondary 49%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+}
+
+@mixin text-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+
+@mixin shadow($value: 0%) {
+    box-shadow: 3px 3px 14px 0px darken(#a7a7a7, $value);
+}
+
+@mixin main-btn($width: 50%) {
+    border-radius: 30px;
+    color: $white;
+    background: $color-secondary;
+    background: linear-gradient(175deg, $color-secondary 0%, $color-primary 98%);
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    width: $width;
+    margin: 0 auto;
+    @include shadow;
+    transform: scale(1);
+    transition: transform 400ms;
+        &:hover {
+            transform: scale(1.15);
+            background: linear-gradient(to right bottom, lighten($color-secondary, 5), lighten($color-primary, 5));
+            @include shadow(30%);
+        }
+}

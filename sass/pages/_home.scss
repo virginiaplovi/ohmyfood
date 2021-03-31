@@ -1,0 +1,200 @@
+/*---HOME PAGE---*/
+
+/*--- HEADER, LOCATION---*/
+
+.location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #a7a7a7;
+    background: linear-gradient(180deg, #a7a7a7 0%, #e2e2e2 15%);
+    padding: 15px;
+    text-align: center;
+
+
+    &__icon {
+        flex-basis: 30px;
+        color: $color-text;
+    }
+
+    &__text {
+        flex-basis: 150px;
+        color: $color-text;
+        font-weight: bold;
+    }
+}
+
+
+/*---INTRO---*/
+
+.explore {
+    background-color: $color-background;
+    height: 200px;
+    text-align: center;
+
+    &__title {
+        font-size: 150%;
+        font-weight: bold;
+        padding: 25px;
+    }
+
+    &__txt {
+        color: $color-text;
+        padding: 0 25px 25px 25px;
+    }
+
+    &__btn {
+        @include main-btn;
+        max-width: 220px;
+
+        & .anchor {
+            @include link;
+        }
+    }
+}
+
+
+/*---INSTRUCTION---*/
+
+.list-header {
+    @include header;
+    padding: 40px 10% 0 10%;
+}
+.instruction-list {
+    width: 80%;
+    max-width: 350px;
+    margin: 0 auto 40px auto;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include tablets {
+        width: 90%;
+        max-width: 1100px;
+        flex-direction: row;
+    }
+
+    &__icon {
+        color: $color-text;
+        padding-right: 20px;
+    }
+
+    & li {
+        counter-increment: step-counter;
+        margin-bottom: 10px;
+        background-color: $color-background;
+        width: 90%;
+        padding: 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        @include shadow;
+        transform: scale(1);
+        transition: transform 400ms;
+        @include tablets {
+            margin: 0 15px;
+            width: 80%;
+            max-width: 255px;
+        }
+
+        &::before{
+            content: counter(step-counter);
+            margin-right: 20px;
+            margin-left: -30px;
+            font-size: 80%;
+            background-color: $color-primary;
+            color: $white;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 20px;
+        }
+
+        &:hover {
+            color: $color-text;
+            @include shadow(30%);
+            transform: scale(1.05);
+
+            .instruction-list__icon {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+
+/*---RESTAURANTS CARD---*/
+.restaurants {
+    margin: 0px;
+    padding: 40px 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $color-background;
+    @include tablets {
+        padding: 40px 10%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    &__header {
+        flex-basis: 100%;
+        @include header;
+    }
+}
+.restaurants__btn {
+    background-color: $white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto 20px auto;
+    @include shadow;
+    position: relative;
+    @include link ($color: initial);
+    @include tablets {
+        width: 45%;
+        max-width: 480px;
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 150px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-bottom: -10px;
+        }
+
+    & .new {
+        position: absolute;
+        background-color: $color-tertiary;
+        color: darken($color-tertiary, 40%);
+        padding: 5px 20px;
+        border-radius: 3px;
+        top: 12px;
+        right: 12px;
+    }
+
+    & .caption {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__text {
+            margin-left: 10px;
+            > p:first-child {
+                font-weight: bold;
+                margin-bottom: -10px;
+            }
+        }
+
+        &__icon {
+            @include heart-icon;
+
+            &--full {
+                @include heart-icon;
+                @include heart-hover;
+            }
+        }
+    }
+}
