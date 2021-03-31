@@ -239,75 +239,71 @@ $breakpoints: (
         flex-basis: 100%;
         @include header;
     }
+}
+.restaurants__btn {
+    background-color: $white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto 20px auto;
+    @include shadow;
+    position: relative;
+    @include link ($color: initial);
+    @include tablets {
+        width: 45%;
+        max-width: 480px;
+    }
 
-    &__btn {
-        background-color: $white;
-        border-radius: 20px;
+    img {
         width: 100%;
-        max-width: 450px;
-        margin: 0 auto 20px auto;
-        @include shadow;
-        position: relative;
-        @include link ($color: initial);
-        @include tablets {
-            width: 45%;
-            max-width: 480px;
+        object-fit: cover;
+        height: 150px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-bottom: -10px;
         }
 
-        img {
-            width: 100%;
-            object-fit: cover;
-            height: 150px;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            margin-bottom: -10px;
-        }
+    & .new {
+        position: absolute;
+        background-color: $color-tertiary;
+        color: darken($color-tertiary, 40%);
+        padding: 5px 20px;
+        border-radius: 3px;
+        top: 12px;
+        right: 12px;
+    }
 
-        & .new {
-            position: absolute;
-            background-color: $color-tertiary;
-            color: darken($color-tertiary, 40%);
-            padding: 5px 20px;
-            border-radius: 3px;
-            top: 12px;
-            right: 12px;
-        }
+    & .caption {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
 
-        & .caption {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-
-            &__text {
-                margin-left: 10px;
-                > p:first-child {
-                    font-weight: bold;
-                    margin-bottom: -10px;
-                }
+        &__text {
+            margin-left: 10px;
+            > p:first-child {
+                font-weight: bold;
+                margin-bottom: -10px;
             }
+        }
 
-            &__icon {
+        &__icon {
+            @include heart-icon;
+
+            &--full {
                 @include heart-icon;
+                color: transparent;
+                transform: scale(0.3);
+                transition: transform 300ms;
 
-                &--full {
-                    @include heart-icon;
-                    color: transparent;
-                    transform: scale(0.3);
-                    transition: transform 300ms;
-
-                        &:hover {
-                        transform: scale(0.86);
-                        background: -webkit-linear-gradient(198deg, $color-primary 10%, $color-secondary 49%);
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                 }
+                &:hover {
+                    transform: scale(0.86);
+                    background: -webkit-linear-gradient(198deg, $color-primary 10%, $color-secondary 49%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
                 }
-
-
             }
         }
     }
-
 }
 
 .footer-container {
@@ -544,22 +540,23 @@ $breakpoints: (
     }
   }
 
-  .submenu {
+  .submenu.delay-1, .submenu.delay-2, .submenu.delay-3 {
       .menu-item {
         animation: FadeIn 600ms linear;
         animation-fill-mode: backwards;
     }
   }
 
-  .submenu .menu-item:nth-child(2) { animation-delay: .2s;}
-  .submenu .menu-item:nth-child(3) { animation-delay: .4s;}
-  .submenu .menu-item:nth-child(4) { animation-delay: .6s;}
-  .submenu .menu-item:nth-child(6) { animation-delay: 1.2s;}
-  .submenu .menu-item:nth-child(7) { animation-delay: 1.4s;}
-  .submenu .menu-item:nth-child(8) { animation-delay: 1.6s;}
-  .submenu .menu-item:nth-child(10) { animation-delay: 2.2s;}
-  .submenu .menu-item:nth-child(11) { animation-delay: 2.4s;}
-  .submenu .menu-item:nth-child(12) { animation-delay: 2.6s}
+  .submenu.delay-1 .menu-item:nth-child(2) { animation-delay: .2s;}
+  .submenu.delay-1 .menu-item:nth-child(3) { animation-delay: .4s;}
+  .submenu.delay-1 .menu-item:nth-child(4) { animation-delay: .6s;}
+  .submenu.delay-1 .menu-item:nth-child(5) { animation-delay: .8s;}
+  .submenu.delay-2 .menu-item:nth-child(2) { animation-delay: 1.2s;}
+  .submenu.delay-2 .menu-item:nth-child(3) { animation-delay: 1.4s;}
+  .submenu.delay-2 .menu-item:nth-child(4) { animation-delay: 1.6s;}
+  .submenu.delay-3 .menu-item:nth-child(2) { animation-delay: 2.2s;}
+  .submenu.delay-3 .menu-item:nth-child(3) { animation-delay: 2.4s;}
+  .submenu.delay-3 .menu-item:nth-child(4) { animation-delay: 2.6s}
 
 //   END
 
